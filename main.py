@@ -1,5 +1,8 @@
 import pygame
+
 from config import *
+# from debug import debug
+
 from src.level import Level
 
 
@@ -19,11 +22,12 @@ class Game:
         running = True
         while running:
             for event in pygame.event.get():
-                if event.type == pygame.QUIT or (event.type == pygame.KEYUP and event.key == pygame.K_q):
+                if event.type == pygame.QUIT:
                     running = False
 
             self.screen.fill('black')
             self.level.run()
+            # debug(f"WIDTH {WIDTH}, HEIGHT {HEIGHT}")
             pygame.display.update()
             self.clock.tick(FPS)
 
