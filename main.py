@@ -21,22 +21,13 @@ class Game:
 
     def run(self):
 
-        # tile_count, player_count = 0, 0
-        # for sprite in self.level.visible_sprites:
-        #     if isinstance(sprite, (Tile, )):
-        #         print(sprite.groups())
-        #     if isinstance(sprite, (Player, )):
-        #         print(sprite.groups())
-
-        # print(f"tile_count {tile_count}, player_count {player_count}")
-
         running = True
         while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
 
-            self.screen.fill('#53c653')
+            self.screen.fill('#669900')
             self.level.run()
             pygame.display.update()
             self.clock.tick(FPS)
